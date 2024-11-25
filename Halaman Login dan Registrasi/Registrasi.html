@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrasi</title>
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Registrasi.css">
+    <link rel="stylesheet" href="navbarcss">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+</head>
+<body class="bg-light">
+    <!-- Navbar start -->
+    
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="registration-container p-4 p-md-5">
+                    <div class="logo-container">
+                        <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sneaker-logo-shoe-logo-sneaker-store-brand-design-template-1d4a3b5108153941ba8c6b9e18a57ca9_screen.jpg?ts=1645975452" alt="Logo Toko Sepatu" class="logo">
+                        <h2 class="text-center mb-4">Sign Up</h2>
+                    </div>
+                    
+                    <form id="registrationForm" novalidate>
+                        <div class="mb-3">
+                            <label for="fullName" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="fullName" required>
+                            <div class="error-message" id="fullNameError">Nama lengkap harus diisi</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="error-message" id="emailError">Email tidak valid</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Nomor Telepon</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                            <div class="error-message" id="phoneError">Nomor telepon tidak valid</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                            <div class="error-message" id="passwordError">Password minimal 8 karakter</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Konfirmasi Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                            <div class="error-message" id="confirmPasswordError">Password tidak cocok</div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                Saya setuju dengan syarat dan ketentuan
+                            </label>
+                            <div class="error-message" id="termsError">Anda harus menyetujui syarat dan ketentuan</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-register btn-lg w-100">Daftar</button>
+                    </form>
+
+                    <p class="text-center mt-4">
+                        Sudah punya akun? <a href="login3.html" class="text-decoration-none">Masuk di sini</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Reset error messages
+            document.querySelectorAll('.error-message').forEach(error => {
+                error.style.display = 'none';
+            });
+            
+            let isValid = true;
+            
+            // Validate full name
+            const fullName = document.getElementById('fullName');
+            if (!fullName.value.trim()) {
+                document.getElementById('fullNameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate email
+            const email = document.getElementById('email');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate phone
+            const phone = document.getElementById('phone');
+            const phoneRegex = /^[0-9]{10,13}$/;
+            if (!phoneRegex.test(phone.value)) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate password
+            const password = document.getElementById('password');
+            if (password.value.length < 8) {
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate confirm password
+            const confirmPassword = document.getElementById('confirmPassword');
+            if (password.value !== confirmPassword.value) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // Validate terms
+            const terms = document.getElementById('terms');
+            if (!terms.checked) {
+                document.getElementById('termsError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // Here you would typically send the form data to your server
+                alert('Registrasi berhasil! Data akan diproses.');
+                this.reset();
+            }
+        });
+        </script>
+
+        <div id="icon-container"></div>
+        
+        <script>
+            const container = document.getElementById("icon-container");
+            const icon = document.createElement("i");
+            icon.classList.add("material-icons");
+            icon.innerText = "home";
+            container.appendChild(icon);
+        </script>
+
+        <script src="navbar.js"></script>
+
+</body>
+</html>

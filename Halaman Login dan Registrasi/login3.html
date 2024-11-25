@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="login4.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="text-center mb-4">
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sneaker-logo-shoe-logo-sneaker-store-brand-design-template-1d4a3b5108153941ba8c6b9e18a57ca9_screen.jpg?ts=1645975452" alt="Logo" class="shoe-logo">
+            <h3>Welcome Back</h3>
+        </div>
+
+        <div class="alert alert-danger" role="alert" id="error-message" style="display: none;">
+            Incorrect username or password!
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="password" class="form-label">Password</label>
+                <div class="input-wrapper">
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                    <span id="toggle-password" class="material-icons">visibility</span>
+                </div>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="rememberMe">
+                <label class="form-check-label" for="rememberMe">Remember me</label>
+            </div>
+
+            <button type="submit" class="btn btn-login">Log In</button>
+
+            <div class="text-center mt-3">
+                <a href="#" class="text-decoration-none">Forgot password?</a> |
+                <a href="Registrasi.html" class="text-decoration-none">Sign Up</a>
+            </div>
+        </form>
+
+        <div class="text-center mt-4 footer-text">
+            <p>"Step into your greatness. Welcome back!"</p>
+        </div>
+    </div>
+
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('error-message');
+
+            // Simple validation example
+            if (username === 'admin' && password === 'admin123') {
+                window.location.href = 'dashboard.html';
+            } else {
+                errorMessage.style.display = 'block';
+                setTimeout(() => {
+                    errorMessage.style.display = 'none';
+                }, 3000);
+            }
+        });
+
+        // Toggle password visibility
+        const togglePassword = document.getElementById('toggle-password');
+        const passwordField = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function() {
+            const isPassword = passwordField.type === 'password';
+            passwordField.type = isPassword ? 'text' : 'password';
+            togglePassword.textContent = isPassword ? 'visibility_off' : 'visibility';
+        });
+
+        // Remember me feature
+        const rememberMe = document.getElementById('rememberMe');
+        rememberMe.addEventListener('change', function() {
+            if (this.checked) {
+                const username = document.getElementById('username').value;
+                localStorage.setItem('rememberedUser', username);
+            } else {
+                localStorage.removeItem('rememberedUser');
+            }
+        });
+
+        window.addEventListener('load', function() {
+            const rememberedUser = localStorage.getItem('rememberedUser');
+            if (rememberedUser) {
+                document.getElementById('username').value = rememberedUser;
+                document.getElementById('rememberMe').checked = true;
+            }
+        });
+    </script>
+</body>
+</html>

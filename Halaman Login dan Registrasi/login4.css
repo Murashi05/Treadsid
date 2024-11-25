@@ -1,0 +1,68 @@
+body {
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.login-container {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.shoe-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.btn-login {
+    background: #007bff;
+    color: #fff;
+    width: 100%;
+    border-radius: 50px;
+}
+
+.btn-login:hover {
+    background: #0056b3;
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    padding-right: 2.5rem; /* Adjust space for the icon */
+}
+
+#toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #6c757d;
+    font-size: 20px;
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline;
+}
+
+.footer-text {
+    color: #666;
+    font-size: 14px;
+}

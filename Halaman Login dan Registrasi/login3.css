@@ -1,0 +1,257 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/sneaker-logo-shoe-logo-sneaker-store-brand-design-template-1d4a3b5108153941ba8c6b9e18a57ca9_screen.jpg?ts=1645975452');
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(to right, #ff75ef, #feb47b)                                                             ;    
+}
+
+.login-container {
+    background: rgba(255,255,255,0.2);
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8 32px rgba(31,38,135,0.37);
+}
+
+.login-container h2 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgb(255, 250, 250);
+}
+
+.form-group input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.form-container {
+    background: rgba(225, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.shoe-logo {
+    width: 120px;
+    margin-bottom: 20px;
+}
+
+.btn-login {
+    background: #3f51b5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-login:hover {
+    background: #303f9f;
+    transform: translateY(-2px);
+}
+
+.form-control:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 0 0.2rem rgba(63,81,181,0.25);
+}
+
+.alert {
+    display: none;
+}
+.buat{
+    text-align: right;
+}
+
+input[type="text"], input[type="password"] {
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    background-color: #d4f0f0;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #004ccc;
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #ff7e5f;
+    transition: 0.3s ease;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    padding-left: 40px; 
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.input-container .material-icons {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888; 
+    font-size: 20px;
+}
+
+.toggle-password {
+    background-color: #90fcfc;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logo {
+    animation: logo-float 3s ease-in-out infinite;
+}
+
+@keyframes logo-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Animasi background dengan gradient berubah */
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Ubah background menjadi animasi */
+body {
+    background: linear-gradient(-45deg, #ff75ef, #feb47b, #00d4ff, #39ff14);
+    background-size: 400% 400%;
+    animation: gradient-move 10s ease infinite;
+}
+
+/* Animasi hover untuk input */
+.input-container input {
+    transition: all 0.3s ease-in-out;
+}
+
+.input-container input:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.5);
+}
+
+/* Animasi hover untuk button */
+.btn-login {
+    background: linear-gradient(to right, #3f51b5, #1e90ff);
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-login:hover {
+    background: linear-gradient(to right, #1e90ff, #3f51b5);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 15px rgba(63, 81, 181, 0.4);
+}
+
+/* Animasi pada label form */
+.form-label {
+    position: relative;
+    color: #444;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-label::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: #3f51b5;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-label:hover::before {
+    width: 100%;
+}
+
+/* Logo efek zoom-in */
+.shoe-logo {
+    transition: all 0.3s ease-in-out;
+}
+
+.shoe-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Fokus pada input */
+input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid #7fddff;
+    box-shadow: 0px 4px 8px rgba(85, 189, 221, 0.667);
+}
+
+/* Floating animation for the login container */
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.login-container {
+    animation: floating 3s ease-in-out infinite;
+}

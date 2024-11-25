@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treads.id</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Style -->
+    <link rel="stylesheet" href="css/stylesepatu.css" />
+  </head>
+  <body>
+
+    <!-- Navbar start -->
+     <nav class="navbar">
+        <a href="#" class="navbar-logo">Treads.id</a>
+
+        <div class="navbar-nav">
+            <a href="#home">Home</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Kontak</a>
+        </div>
+
+        <div class="navbar-extra">
+            <a href="#" id="search"><i class="material-icons">search</i></a>
+            <a href="#" id="shopping"><i class="material-icons">shopping_bag</i></a>
+            <a href="#" id="hamburger-menu"><i class="material-icons">menu</i></a>
+            <a href="#" id="profile"><i class="material-icons">perm_identity</i></a>
+        </div>
+     </nav>
+
+    <!-- Navbar end -->
+
+    <!-- Hero section start -->
+     <section class="hero" id="home">
+     <main class="content">
+      <h1>Step Up, Stand Out with <span>Local Pride</span></h1>
+      <p>Treads.id is a footwear brand that blends global style with the pride of local craftsmanship. We offer a curated range of imported and local shoes, with a strong focus on promoting high-quality, locally made products. Each pair reflects our commitment to style, comfort, and supporting local artisans. When you wear Treads.id, you’re not just choosing a shoe – you’re embracing a story of heritage and purpose, stepping confidently with footwear that stands out globally yet is rooted in local pride.</p>
+      <a href="#" class="cta">Buy Now</a>
+     </main>
+     </section>
+
+
+    <!-- Hero section end -->
+
+    <!-- Navbar Icons -->
+    <div id="icon-container"></div>
+
+    <script>
+      const container = document.getElementById("icon-container");
+      const icon = document.createElement("i");
+      icon.classList.add("material-icons");
+      icon.innerText = "home";
+      container.appendChild(icon);
+    </script>
+
+    <!-- Javascript -->
+     <script src="js/scriptsepatu.js"></script>
+
+  </body>
+</html>
